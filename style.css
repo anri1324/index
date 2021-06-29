@@ -1,0 +1,16 @@
+* {
+    font-family:cursive;
+}
+
+body{
+    background-color: darkgray;
+}
+
+.container{
+    margin:auto;
+    background-color: lightcoral;
+    width:500px;
+    border-radius: 25px;
+
+
+}
