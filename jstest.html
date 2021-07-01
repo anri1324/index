@@ -1,0 +1,26 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <input id="name">
+        <button onclick="addName()">add</button>
+        <div id="list"></div>
+    </body>
+
+    <script>
+        var names = [];
+        function addName(){
+            var iHandle = document.getElementById("name");
+            var dHandle = document.getElementById("list");
+            var myHTML = "<ul>";
+            names.push(iHandle.value);
+            
+                myHTML = myHTML + "<li>" + names[i] + "</li>";
+            
+            var myHTML = myHTML + "</ul>"
+            dHandle.innerHTML = myHTML;
+        }
+    </script>
+</html>
