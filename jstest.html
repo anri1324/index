@@ -16,9 +16,9 @@
             var dHandle = document.getElementById("list");
             var myHTML = "<ul>";
             names.push(iHandle.value);
-            
+            for (var i=0; i<names.length; i++){
                 myHTML = myHTML + "<li>" + names[i] + "</li>";
-            
+            }
             var myHTML = myHTML + "</ul>"
             dHandle.innerHTML = myHTML;
         }
