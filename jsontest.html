@@ -43,8 +43,9 @@
     </body>
 
     <script>
-      axios.get("https://www.trackcorona.live/api/countries")
-        function buildList() {
+      axios.get("https://www.trackcorona.live/api/countries").then(response => {console.log(response)
+            buildList(response.data.data)});
+        function buildList(response) {
             var dHandle = document.getElementById("output");
             var myHTML = "<ul>";
             coviddata.data.sort(function (a,b){
