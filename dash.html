@@ -19,10 +19,10 @@
     </style>
   </head>
 
-  <body>
+  <body class = "#3f51b5 indigo">
     <!-- Navbar from Materialize CSS -->
     <nav>
-      <div class="nav-wrapper red darken-2 white-text">
+      <div class="nav-wrapper purple darken-1 white-text">
         <a href="#" class="brand-logo" style='padding-left:10px;'>Dashboard</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="sass.html">Sass</a></li>
@@ -57,7 +57,7 @@
         <div class="card">
           <div class="card-content">
             <span class="card-title">Bar Chart</span>
-            <canvas id="bar-chart" width="800" height="450"></canvas>
+            <canvas id="bar-chart" width="800" height="500"></canvas>
           </div>
         </div>
       </div> <!-- end of col -->
@@ -65,7 +65,7 @@
         <div class="card">
           <div class="card-content">
             <span class="card-title">Pie Chart</span>
-            <canvas id="pie-chart" width="800" height="450"></canvas>
+            <canvas id="pie-chart" width="800" height="500"></canvas>
           </div>
         </div>
       </div> <!-- end of col -->
@@ -82,9 +82,10 @@
         buildList(response.data.data); // call the buildList function
         mapAlgo(response.data.data);
         barChart(response.data.data);
+        pieChart(response.data.data);
       })
-      barChart();
-      pieChart();
+      
+      
     //mapIt(); // call mapIt() function
 
     function mapAlgo(response) {
@@ -139,6 +140,7 @@
       myHTML = myHTML + "</ul>"
       dHandle.innerHTML = myHTML;
     }
+
     function barChart(cdata){
       var labarray = [];
       var dataarray = [];
@@ -168,15 +170,20 @@
     }
 });}
 
-function pieChart(){
+function pieChart(cdata){
+  var total = 0;
+  for(i=3; i<cdata.length; i++){
+    total = total + parseInt(cdata[i].dead);
+  }
+  console.log(total);
   new Chart(document.getElementById("pie-chart"), {
     type: 'pie',
     data: {
-      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+      labels: [cdata[0].location, cdata[1].location, cdata[2].location, "Rest of the world"],
       datasets: [{
-        label: "Population (millions)",
+        label: "Covid Deaths",
         backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-        data: [2478,5267,734,784,433]
+        data: [cdata[0].dead, cdata[1].dead, cdata[2].dead, total]
       }]
     },
     options: {
@@ -185,8 +192,8 @@ function pieChart(){
         text: 'Predicted world population (millions) in 2050'
       }
     }
-});
-}
+});}
+
   </script>
 
 </html>
