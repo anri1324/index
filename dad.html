@@ -184,7 +184,18 @@
         
 
         function changeColor(){
-            var color = Math.floor((Math.random()*3)+0)
+            var color = 0;
+            var previous = 0;
+            for(i=0; i<1;){
+            color = Math.floor((Math.random()*20)+0)
+            if(previous == color){
+
+            }
+            else{
+                previous = color;
+                i++
+            }
+        }
             var nameList = ["Alan", "Audrey", "Elkin", "Enoch", "Evan", "Jamin", "Jeffery", "Jerome", "Julia", "Justin", "Rachael", "Samuel Z.", "Samuel W.", "William", "Zoelin", "Michael", "Dragon", "Rian", "Leon", "Ruth", "Claire"]
             var realName = "";
             var colorNum = color.toString();
@@ -194,6 +205,7 @@
             document.getElementById("buttonContainer").innerHTML = div;
             document.getElementById("name").innerHTML = realName
             console.log(div);
+            previous = color;
         }
     </script>
 </html>
