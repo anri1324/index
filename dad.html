@@ -154,7 +154,7 @@
             }
 
             .card-content{
-                font-size:;
+                font-size:100px;
             }
 
 
@@ -198,9 +198,8 @@
             var color = 0;
             var previous = 0;
             color = Math.floor((Math.random()*20)+0)
-            previous = color;
+            
             while(previous == color){
-                color = previous;
                 color = Math.floor((Math.random()*20)+0)
             }
             var nameList = ["Alan", "Audrey", "Elkin", "Enoch", "Evan", "Jamin", "Jeffery", "Jerome", "Julia", "Justin", "Rachael", "Samuel Z.", "Samuel W.", "William", "Zoelin", "Michael", "Dragon", "Rian", "Leon", "Ruth", "Claire"]
@@ -211,8 +210,9 @@
             var div = "<img src='" + color + ".jpg' id = 'button'>"
             document.getElementById("buttonContainer").innerHTML = div;
             document.getElementById("name").innerHTML = realName
-            console.log(div);
             previous = color;
+            
+            
         }
     </script>
 </html>
