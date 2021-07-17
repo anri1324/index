@@ -146,6 +146,17 @@
                 background-color:olivedrab;
             }
 
+            .col{
+                width:50%;
+                
+                margin-left:25%;
+                
+            }
+
+            .card-content{
+                font-size:;
+            }
+
 
            
         </style>
@@ -155,9 +166,9 @@
         
 
         <div class="row">
-            <div class="col s12 m12">
+            <div class="col" style="height:700px">
               <div class="card">
-                <div class="card-image" id="buttonContainer">
+                <div class="card-image" id="buttonContainer" >
                     <img src='2.jpg' id = 'button'>
                   <span class="card-title"></span>
                 </div>
@@ -186,16 +197,12 @@
         function changeColor(){
             var color = 0;
             var previous = 0;
-            for(i=0; i<1;){
             color = Math.floor((Math.random()*20)+0)
-            if(previous == color){
-
+            previous = color;
+            while(previous == color){
+                color = previous;
+                color = Math.floor((Math.random()*20)+0)
             }
-            else{
-                previous = color;
-                i++
-            }
-        }
             var nameList = ["Alan", "Audrey", "Elkin", "Enoch", "Evan", "Jamin", "Jeffery", "Jerome", "Julia", "Justin", "Rachael", "Samuel Z.", "Samuel W.", "William", "Zoelin", "Michael", "Dragon", "Rian", "Leon", "Ruth", "Claire"]
             var realName = "";
             var colorNum = color.toString();
